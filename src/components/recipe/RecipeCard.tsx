@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native';
 import React from 'react';
 
-const App = () => {
+const RecipeCard = () => {
   return (
     <View>
-      <Text>App</Text>
+      <Text>RecipeCard</Text>
     </View>
   );
 };
 
-export default App;
+export default RecipeCard;

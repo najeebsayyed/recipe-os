@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native';
 import React from 'react';
 
-const SettingsScreen = () => {
+const IngredientChip = () => {
   return (
     <View>
-      <Text>SettingsScreen</Text>
+      <Text>IngredientChip</Text>
     </View>
   );
 };
 
-export default SettingsScreen;
+export default IngredientChip;

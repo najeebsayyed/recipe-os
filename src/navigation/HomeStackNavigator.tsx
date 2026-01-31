@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native';
 import React from 'react';
 
-const App = () => {
+const HomeStackNavigator = () => {
   return (
     <View>
-      <Text>App</Text>
+      <Text>HomeStackNavigator</Text>
     </View>
   );
 };
 
-export default App;
+export default HomeStackNavigator;

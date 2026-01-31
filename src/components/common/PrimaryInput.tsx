@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native';
 import React from 'react';
 
-const App = () => {
+const PrimaryInput = () => {
   return (
     <View>
-      <Text>App</Text>
+      <Text>PrimaryInput</Text>
     </View>
   );
 };
 
-export default App;
+export default PrimaryInput;

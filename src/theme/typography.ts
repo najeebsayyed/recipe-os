@@ -1,22 +1,25 @@
 export const fontFamily = {
-  regular: 'Inter-Regular',
-  medium: 'Inter-Medium',
-  semiBold: 'Inter-SemiBold',
-  bold: 'Inter-Bold',
+  regular: 'Nunito-Regular',
+  medium: 'Nunito-Medium',
+  semiBold: 'Nunito-SemiBold',
+  bold: 'Nunito-Bold',
 };
 
 export const fontSize = {
-  xs: 12,
-  sm: 14,
-  md: 16,
-  lg: 18,
-  xl: 22,
-  xxl: 26,
+  xs: 14,
+  sm: 16,
+  md: 18,
+  lg: 22,
+  xl: 26,
+  xxl: 32,
+  xxxl: 36,
 };
 
 export const lineHeight = {
-  sm: 18,
-  md: 22,
-  lg: 26,
-  xl: 30,
+  xs: 16,
+  sm: 20,
+  md: 24,
+  lg: 28,
+  xl: 32,
+  xxl: 38,
 };

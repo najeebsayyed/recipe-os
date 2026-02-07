@@ -29,7 +29,6 @@ const LoginScreen = ({ navigation }) => {
         label="Password"
         placeholder="Password"
         type="password"
-        rightText="Forgot Password"
         icon={<LockIcon />}
       />
       <PrimaryButton

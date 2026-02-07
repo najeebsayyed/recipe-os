@@ -17,8 +17,8 @@ const LoginScreen = ({ navigation }) => {
         subtitle={'Log in to your account'}
       />
       <PrimaryInput
-        label="Email Adress"
-        placeholder="Email Adress"
+        label="Email Address"
+        placeholder="Email Address"
         type="email"
         icon={<EmailIcon />}
       />

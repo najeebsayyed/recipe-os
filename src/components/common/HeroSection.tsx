@@ -7,7 +7,7 @@ interface HeroSectionProps {
 
 const HeroSection: React.FC<HeroSectionProps> = ({ title, subtitle }) => {
   return (
-    <View className="items-center mt-24 mb-20 px-6">
+    <View className="items-center mt-20 mb-16 px-6">
       <Text className="font-nunitoBold text-xl  text-primary text-center">
         {title}
       </Text>

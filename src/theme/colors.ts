@@ -1,6 +1,6 @@
 const colors = {
   // Brand Greens
-  primary: '#1F6F5C', // Dark green (buttons, CTA)
+  primary: '#1f4d42', // Dark green (buttons, CTA)
   secondary: '#6FB8A8', // Light green (chips, icons)
 
   // Backgrounds
@@ -8,12 +8,12 @@ const colors = {
   white: '#FFFFFF',
 
   // Text
-  textPrimary: '#1B2E2A',
+  textPrimary: '',
   textSecondary: '#6B7F7A',
   placeholder: '#9FB4AE',
 
   // UI
-  border: '#E2ECE8',
+  border: '#D6E4DF',
   disabled: '#C9DAD5',
   error: '#D9534F',
   success: '#4CAF50',

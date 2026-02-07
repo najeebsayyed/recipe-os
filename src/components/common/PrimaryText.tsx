@@ -1,11 +1,20 @@
-import { View, Text } from 'react-native';
 import React from 'react';
+import { Text, TextProps } from 'react-native';
 
-const PrimaryText = () => {
+interface Props extends TextProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
+const PrimaryText: React.FC<Props> = ({
+  children,
+  className = '',
+  ...props
+}) => {
   return (
-    <View>
-      <Text>PrimaryText</Text>
-    </View>
+    <Text className={`text-textPrimary font-regular ${className}`} {...props}>
+      {children}
+    </Text>
   );
 };
 

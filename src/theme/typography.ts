@@ -1,18 +1,18 @@
 export const fontFamily = {
-  regular: 'Nunito-Regular',
-  medium: 'Nunito-Medium',
-  semiBold: 'Nunito-SemiBold',
-  bold: 'Nunito-Bold',
+  nunitoRegular: 'Nunito-Regular',
+  nunitoMedium: 'Nunito-Medium',
+  nunitoSemiBold: 'Nunito-SemiBold',
+  nunitoBold: 'Nunito-Bold',
 };
 
 export const fontSize = {
   xs: 14,
-  sm: 16,
-  md: 18,
-  lg: 22,
-  xl: 26,
-  xxl: 32,
-  xxxl: 36,
+  sm: 18,
+  md: 22,
+  lg: 34,
+  xl: 40,
+  xxl: 44,
+  xxxl: 48,
 };
 
 export const lineHeight = {

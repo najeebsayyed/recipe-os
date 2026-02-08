@@ -1,6 +1,13 @@
 module.exports = {
   presets: ['module:@react-native/babel-preset', 'nativewind/babel'],
   plugins: [
-    'react-native-worklets/plugin', // if used, must be last
+    [
+      'module:react-native-dotenv',
+      {
+        moduleName: '@env',
+        path: '.env',
+      },
+    ],
+    'react-native-worklets/plugin', // keep if using Reanimated/worklets
   ],
 };

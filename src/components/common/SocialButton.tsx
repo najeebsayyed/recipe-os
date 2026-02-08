@@ -11,7 +11,7 @@ interface Props extends TouchableOpacityProps {
   icon?: any;
 }
 
-const PrimaryButton: React.FC<Props> = ({ title, icon, ...props }) => {
+const SocialButton: React.FC<Props> = ({ title, icon, ...props }) => {
   return (
     <TouchableOpacity
       className="bg-white py-4 rounded-2xl items-center mt-6 mb-6 border border-border flex-row justify-center"
@@ -27,4 +27,4 @@ const PrimaryButton: React.FC<Props> = ({ title, icon, ...props }) => {
   );
 };
 
-export default PrimaryButton;
+export default SocialButton;

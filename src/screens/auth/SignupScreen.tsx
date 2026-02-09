@@ -10,7 +10,7 @@ import EmailIcon from '../../assets/icons/email.svg';
 import LockIcon from '../../assets/icons/lock.svg';
 import ProfileIcon from '../../assets/icons/profile.svg';
 import { signUp } from '../../services/supabase/auth.service';
-const LoginScreen = ({ navigation }: any) => {
+const SignupScreen = ({ navigation }: any) => {
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -77,4 +77,4 @@ const LoginScreen = ({ navigation }: any) => {
   );
 };
 
-export default LoginScreen;
+export default SignupScreen;

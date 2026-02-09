@@ -65,7 +65,7 @@ const LoginScreen = ({ navigation }: any) => {
         title="Sign up with Google"
         icon={require('../../assets/images/google.png')}
       />
-      <Divider className="mt-3" />
+      <Divider />
       <AuthSwitchText
         question="Already have an account? "
         actionText="Log In"

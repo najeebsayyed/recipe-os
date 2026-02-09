@@ -1,10 +1,19 @@
 import { supabase } from './client';
 
-// SIGN UP
-export const signUp = async (email: string, password: string) => {
+// SIGN UP (with full name)
+export const signUp = async (
+  email: string,
+  password: string,
+  fullName: string,
+) => {
   const { data, error } = await supabase.auth.signUp({
     email,
     password,
+    options: {
+      data: {
+        full_name: fullName,
+      },
+    },
   });
 
   return { data, error };
@@ -22,5 +31,6 @@ export const logIn = async (email: string, password: string) => {
 
 // LOGOUT
 export const signOut = async () => {
-  return await supabase.auth.signOut();
+  const { error } = await supabase.auth.signOut();
+  return { error };
 };

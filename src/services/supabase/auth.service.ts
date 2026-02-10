@@ -1,6 +1,6 @@
 import { supabase } from './client';
-import { store } from '../store';
-import { setUser, clearUser } from '../store/slices/authSlice';
+import { store } from '../../store';
+import { setUser, clearUser } from '../../store/slices/authSlice';
 // SIGN UP (with full name)
 export const signUp = async (
   email: string,

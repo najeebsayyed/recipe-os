@@ -1,12 +1,17 @@
-import { View, Text } from 'react-native';
 import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { useSelector } from 'react-redux';
+import { RootState } from '../store';
 
-const RootNavigator = () => {
+import AuthNavigator from './AuthNavigator';
+import TabNavigator from './TabNavigator';
+
+export default function RootNavigator() {
+  const user = useSelector((state: RootState) => state.auth.user);
+
   return (
-    <View>
-      <Text>RootNavigator</Text>
-    </View>
+    <NavigationContainer>
+      {user ? <TabNavigator /> : <AuthNavigator />}
+    </NavigationContainer>
   );
-};
-
-export default RootNavigator;
+}

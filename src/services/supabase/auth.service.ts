@@ -1,5 +1,6 @@
 import { supabase } from './client';
-
+import { store } from '../store';
+import { setUser, clearUser } from '../store/slices/authSlice';
 // SIGN UP (with full name)
 export const signUp = async (
   email: string,
@@ -16,6 +17,10 @@ export const signUp = async (
     },
   });
 
+  if (data?.user) {
+    store.dispatch(setUser(data.user));
+  }
+
   return { data, error };
 };
 
@@ -26,11 +31,17 @@ export const logIn = async (email: string, password: string) => {
     password,
   });
 
+  if (data?.user) {
+    store.dispatch(setUser(data.user));
+  }
   return { data, error };
 };
 
 // LOGOUT
 export const signOut = async () => {
   const { error } = await supabase.auth.signOut();
+  if (!error) {
+    store.dispatch(clearUser());
+  }
   return { error };
 };

@@ -2,11 +2,15 @@ import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
 import '../global.css';
 import AuthNavigator from './navigation/AuthNavigator';
+import { Provider } from 'react-redux';
+import { store } from './store';
 const App = () => {
   return (
-    <NavigationContainer>
-      <AuthNavigator />
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <AuthNavigator />
+      </NavigationContainer>
+    </Provider>
   );
 };
 

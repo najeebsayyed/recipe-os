@@ -9,7 +9,7 @@ export const fontSize = {
   xs: 14,
   sm: 18,
   md: 22,
-  lg: 34,
+  lg: 2,
   xl: 40,
   xxl: 44,
   xxxl: 48,

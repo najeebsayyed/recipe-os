@@ -1,16 +1,32 @@
-import { View, Text } from 'react-native';
+import { View, Image } from 'react-native';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
+import HeroSection from '../../components/common/HeroSection';
 
-const HomeScreen = () => {
+const HomeScreen = ({}) => {
   const user = useSelector((state: RootState) => state.auth.user);
 
   return (
-    <View className="flex-1 justify-center items-center">
-      <Text>HomeScreen</Text>
+    <View className="flex-1 bg-white px-7 ">
+      {/* Header with logo and notification icon */}
 
-      <Text>{user?.user_metadata?.full_name || 'Guest'}</Text>
+      <Image
+        source={require('../../assets/images/appLogo.png')}
+        className="w-40 h-40 ml-[-14] mb-10"
+      />
+
+      {/* Greeting message */}
+      <HeroSection
+        classname="mt-0 ml-[-14]"
+        title={`Hello, ${
+          user?.user_metadata?.full_name.split(' ')[0] || 'Foodie'
+        }👋`}
+        subtitle="Whats in your kitchen ?"
+        subtitleStyle="text-lg font-nunitoSemiBold"
+      />
+
+      {/* User Input */}
     </View>
   );
 };

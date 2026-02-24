@@ -20,7 +20,7 @@ const TabNavigator = () => {
         headerShown: false,
 
         tabBarIcon: ({ focused }) => {
-          const size = 34;
+          const size = 32;
           const activeColor = '#1f4d42'; // dark green
           const inactiveColor = '#6B7F7A'; // light green
 
@@ -44,12 +44,12 @@ const TabNavigator = () => {
         tabBarInactiveTintColor: '#6B7F7A',
 
         tabBarStyle: {
-          height: 80,
+          height: 70,
           backgroundColor: '#fff',
         },
 
         tabBarLabelStyle: {
-          fontSize: 16,
+          fontSize: 15,
           marginBottom: 6,
         },
       })}

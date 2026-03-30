@@ -9,6 +9,8 @@ import AuthSwitchText from '../../components/common/AuthSwitchText';
 import EmailIcon from '../../assets/icons/email.svg';
 import LockIcon from '../../assets/icons/lock.svg';
 import { logIn } from '../../services/supabase/auth.service';
+import { signInWithGoogle } from '../../services/supabase/auth.service';
+
 const LoginScreen = ({ navigation }: any) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -25,6 +27,10 @@ const LoginScreen = ({ navigation }: any) => {
     } else {
       navigation.replace('Home'); // redirect to home
     }
+  };
+  const handleGoogleLogin = async () => {
+    console.log('Button clicked'); // 👈 ADD THIS
+    await signInWithGoogle();
   };
   return (
     <View className="flex-1 bg-white px-7">
@@ -54,6 +60,7 @@ const LoginScreen = ({ navigation }: any) => {
       <SocialButton
         title="Log in with Google"
         icon={require('../../assets/images/google.png')}
+        onPress={handleGoogleLogin}
       />
       <Divider />
       <AuthSwitchText

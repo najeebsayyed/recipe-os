@@ -13,12 +13,12 @@ const HomeScreen = ({}) => {
 
       <Image
         source={require('../../assets/images/appLogo.png')}
-        className="w-40 h-40 ml-[-14] mb-10"
+        className="w-40 h-40 mt-6 absolute"
       />
 
       {/* Greeting message */}
       <HeroSection
-        classname="mt-0 ml-[-14]"
+        classname="mt-48 mb-8 "
         title={`Hello, ${
           user?.user_metadata?.full_name.split(' ')[0] || 'Foodie'
         }👋`}

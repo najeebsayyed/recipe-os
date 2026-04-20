@@ -22,7 +22,7 @@ const SignupScreen = ({ navigation }: any) => {
       return;
     }
 
-    const { data, error } = await signUp(email, password, fullName);
+    const { error } = await signUp(email, password, fullName);
 
     if (error) {
       Alert.alert('Signup Failed', error.message);

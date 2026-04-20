@@ -16,7 +16,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   subtitleStyle = '',
 }) => {
   return (
-    <View className={` mt-20 mb-16 px-6 ${classname}`}>
+    <View className={` mt-20 mb-16  ${classname}`}>
       <Text className={`font-nunitoBold text-xl text-primary ${titleStyle}`}>
         {title}
       </Text>

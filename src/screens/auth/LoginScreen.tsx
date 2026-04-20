@@ -20,7 +20,7 @@ const LoginScreen = ({ navigation }: any) => {
       return;
     }
 
-    const { data, error } = await logIn(email, password);
+    const { error } = await logIn(email, password);
 
     if (error) {
       Alert.alert('Login Failed', error.message);
@@ -38,6 +38,7 @@ const LoginScreen = ({ navigation }: any) => {
         title={'Welcome back!'}
         subtitle={'Log in to your account'}
       />
+
       <PrimaryInput
         label="Email Address"
         placeholder="Email Address"

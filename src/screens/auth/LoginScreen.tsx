@@ -3,13 +3,13 @@ import React, { useState } from 'react';
 import HeroSection from '../../components/common/HeroSection';
 import PrimaryInput from '../../components/common/PrimaryInput';
 import PrimaryButton from '../../components/common/PrimaryButton';
-import SocialButton from '../../components/common/SocialButton';
+// import SocialButton from '../../components/common/SocialButton';
 import Divider from '../../components/common/Divider';
 import AuthSwitchText from '../../components/common/AuthSwitchText';
 import EmailIcon from '../../assets/icons/email.svg';
 import LockIcon from '../../assets/icons/lock.svg';
 import { logIn } from '../../services/supabase/auth.service';
-import { signInWithGoogle } from '../../services/supabase/auth.service';
+// import { signInWithGoogle } from '../../services/supabase/auth.service';
 
 const LoginScreen = ({ navigation }: any) => {
   const [email, setEmail] = useState('');
@@ -28,10 +28,10 @@ const LoginScreen = ({ navigation }: any) => {
       navigation.replace('Home'); // redirect to home
     }
   };
-  const handleGoogleLogin = async () => {
-    console.log('Button clicked'); // 👈 ADD THIS
-    await signInWithGoogle();
-  };
+  // const handleGoogleLogin = async () => {
+  //   console.log('Button clicked'); // 👈 ADD THIS
+  //   await signInWithGoogle();
+  // };
   return (
     <View className="flex-1 bg-white px-7">
       <HeroSection
@@ -57,12 +57,12 @@ const LoginScreen = ({ navigation }: any) => {
         icon={<LockIcon />}
       />
       <PrimaryButton title="Log In" onPress={handleLogin} />
-      <Divider label="OR" />
+      {/* <Divider label="OR" />
       <SocialButton
         title="Log in with Google"
         icon={require('../../assets/images/google.png')}
         onPress={handleGoogleLogin}
-      />
+      /> */}
       <Divider />
       <AuthSwitchText
         question="Don't have an account? "

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import HeroSection from '../../components/common/HeroSection';
 import PrimaryInput from '../../components/common/PrimaryInput';
 import PrimaryButton from '../../components/common/PrimaryButton';
-import SocialButton from '../../components/common/SocialButton';
+// import SocialButton from '../../components/common/SocialButton';
 import Divider from '../../components/common/Divider';
 import AuthSwitchText from '../../components/common/AuthSwitchText';
 import EmailIcon from '../../assets/icons/email.svg';
@@ -60,11 +60,11 @@ const SignupScreen = ({ navigation }: any) => {
         icon={<LockIcon />}
       />
       <PrimaryButton title="Sign Up" onPress={handleSignup} />
-      <Divider label="OR" />
+      {/* <Divider label="OR" />
       <SocialButton
         title="Sign up with Google"
         icon={require('../../assets/images/google.png')}
-      />
+      /> */}
       <Divider />
       <AuthSwitchText
         question="Already have an account? "

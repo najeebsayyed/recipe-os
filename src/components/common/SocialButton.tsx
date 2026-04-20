@@ -14,7 +14,7 @@ interface Props extends TouchableOpacityProps {
 const SocialButton: React.FC<Props> = ({ title, icon, ...props }) => {
   return (
     <TouchableOpacity
-      className="bg-white py-4 rounded-2xl items-center mt-6 mb-6 border border-border flex-row justify-center"
+      className="bg-white py-4 rounded-2xl items-center mt-6 mb-6 border border-primary flex-row justify-center"
       activeOpacity={0.85}
       {...props}
     >

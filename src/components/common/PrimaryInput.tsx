@@ -42,13 +42,13 @@ const PrimaryInput: React.FC<Props> = ({
       )}
 
       {/* Input Field */}
-      <View className="flex-row items-center border border-border rounded-2xl px-4 py-1 bg-white ">
+      <View className="flex-row items-center border border-primary rounded-2xl px-4 py-1 bg-white ">
         {icon && <View className="mr-2">{icon}</View>}
 
         <TextInput
           className="flex-1 text-primary font-nunitoMedium text-sm h-12"
           placeholder={placeholder}
-          placeholderTextColor="#9FB4AE"
+          placeholderTextColor="#8FA39D"
           value={value}
           onChangeText={onChangeText}
           keyboardType={type === 'email' ? 'email-address' : 'default'}

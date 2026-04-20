@@ -7,11 +7,11 @@ import AuthNavigator from './AuthNavigator';
 import TabNavigator from './TabNavigator';
 
 export default function RootNavigator() {
-  const user = useSelector((state: RootState) => state.auth.user);
+  const { user, isGuest } = useSelector((state: RootState) => state.auth);
 
   return (
     <NavigationContainer>
-      {user ? <TabNavigator /> : <AuthNavigator />}
+      {user || isGuest ? <TabNavigator /> : <AuthNavigator />}
     </NavigationContainer>
   );
 }

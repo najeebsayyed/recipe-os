@@ -4,8 +4,11 @@ import HeroSection from '../../components/common/HeroSection';
 import PrimaryButton from '../../components/common/PrimaryButton';
 import Divider from '../../components/common/Divider';
 import SocialButton from '../../components/common/SocialButton';
+import { useDispatch } from 'react-redux';
+import { setGuest } from '../../store/slices/authSlice';
 
 const AuthChoiceScreen = ({ navigation }: any) => {
+  const dispatch = useDispatch();
   return (
     <View className="flex-1 bg-white px-7 justify-between py-10">
       {/* Top Section */}
@@ -29,7 +32,7 @@ const AuthChoiceScreen = ({ navigation }: any) => {
           <Divider label="Or" />
           <SocialButton
             title="Continue as Guest"
-            onPress={() => navigation.navigate('Home')}
+            onPress={() => dispatch(setGuest())}
           />
         </View>
       </View>

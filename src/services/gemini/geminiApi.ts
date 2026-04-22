@@ -1,8 +1,6 @@
 import { GoogleGenAI } from '@google/genai';
 import { Recipe } from '../../types/recipe';
-
-// ⚠️ For now (testing)
-const GEMINI_API_KEY = 'YOUR_API_KEY';
+import { GEMINI_API_KEY } from '@env';
 
 const ai = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
 

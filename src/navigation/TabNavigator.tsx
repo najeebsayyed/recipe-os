@@ -1,10 +1,10 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import HomeScreen from '../screens/home/HomeScreen';
 import ExploreScreen from '../screens/explore/ExploreScreen';
 import SavedScreen from '../screens/saved/SavedScreen';
 import ProfileScreen from '../screens/profile/ProfileScreen';
+import HomeStackNavigator from './HomeStackNavigator';
 
 import HomeIcon from '../assets/icons/home.svg';
 import ExploreIcon from '../assets/icons/explore.svg';
@@ -54,7 +54,7 @@ const TabNavigator = () => {
         },
       })}
     >
-      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Home" component={HomeStackNavigator} />
       <Tab.Screen name="Explore" component={ExploreScreen} />
       <Tab.Screen name="Saved" component={SavedScreen} />
       <Tab.Screen name="Profile" component={ProfileScreen} />

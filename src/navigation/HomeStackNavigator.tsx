@@ -1,12 +1,15 @@
-import { View, Text } from 'react-native';
-import React from 'react';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import HomeScreen from '../screens/home/HomeScreen';
+import RecipeDetailScreen from '../screens/recipe/RecipeDetailScreen';
 
-const HomeStackNavigator = () => {
+const Stack = createNativeStackNavigator();
+
+export default function HomeStackNavigator() {
   return (
-    <View>
-      <Text>HomeStackNavigator</Text>
-    </View>
-  );
-};
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="Home" component={HomeScreen} />
 
-export default HomeStackNavigator;
+      <Stack.Screen name="Recipe" component={RecipeDetailScreen} />
+    </Stack.Navigator>
+  );
+}

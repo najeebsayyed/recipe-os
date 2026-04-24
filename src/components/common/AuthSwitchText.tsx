@@ -1,20 +1,23 @@
-import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 
-interface Props {
+type AuthSwitchTextProps = {
   question: string;
   actionText: string;
   onPress: () => void;
-}
+};
 
-const AuthSwitchText: React.FC<Props> = ({ question, actionText, onPress }) => {
+const AuthSwitchText = ({
+  question,
+  actionText,
+  onPress,
+}: AuthSwitchTextProps) => {
   return (
     <View className="flex-row justify-center mt-8">
       <Text className="text-textSecondary text-sm font-nunitoRegular">
         {question}{' '}
       </Text>
 
-      <TouchableOpacity onPress={onPress}>
+      <TouchableOpacity onPress={onPress} activeOpacity={0.7}>
         <Text className="text-primary text-sm font-nunitoSemiBold">
           {actionText}
         </Text>

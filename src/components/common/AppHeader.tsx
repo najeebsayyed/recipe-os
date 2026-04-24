@@ -1,34 +1,42 @@
 import { View, Text, TouchableOpacity } from 'react-native';
-import React from 'react';
-import Icon from 'react-native-vector-icons/Ionicons';
 import { useNavigation } from '@react-navigation/native';
+import Icon from 'react-native-vector-icons/Ionicons';
 import ArrowBackIcon from '../../assets/icons/arrow_back.svg';
-interface AppHeaderProps {
+import type { NavigationProp } from '@react-navigation/native';
+
+type AppHeaderProps = {
   title: string;
   classname?: string;
   titleStyle?: string;
   showBack?: boolean;
-  rightIcon?: string; // icon name
+  rightIcon?: string;
   onRightPress?: () => void;
-}
+};
 
-const AppHeader: React.FC<AppHeaderProps> = ({
+const AppHeader = ({
   title,
   classname = '',
   titleStyle = '',
   showBack = true,
   rightIcon,
   onRightPress,
-}) => {
-  const navigation = useNavigation();
+}: AppHeaderProps) => {
+  const navigation =
+    useNavigation<NavigationProp<Record<string, object | undefined>>>();
+
+  const handleBackPress = () => {
+    if (navigation.canGoBack()) {
+      navigation.goBack();
+    }
+  };
 
   return (
     <View
-      className={`pt-14 pb-4  flex-row items-center justify-between px-4 ${classname}`}
+      className={`pt-14 pb-4 flex-row items-center justify-between px-4 ${classname}`}
     >
       {/* Left - Back Button */}
       {showBack ? (
-        <TouchableOpacity onPress={() => navigation.goBack()}>
+        <TouchableOpacity onPress={handleBackPress}>
           <ArrowBackIcon pointerEvents="box-none" height={24} width={24} />
         </TouchableOpacity>
       ) : (

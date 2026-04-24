@@ -1,10 +1,18 @@
-import React from 'react';
 import { Keyboard, TouchableWithoutFeedback, View } from 'react-native';
+import type { ReactNode } from 'react';
 
-export default function DismissKeyboardView({ children }) {
+type DismissKeyboardViewProps = {
+  children: ReactNode;
+};
+
+const DismissKeyboardView = ({ children }: DismissKeyboardViewProps) => {
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
-      <View style={{ flex: 1 }}>{children}</View>
+      <View className="flex-1" pointerEvents="box-none">
+        {children}
+      </View>
     </TouchableWithoutFeedback>
   );
-}
+};
+
+export default DismissKeyboardView;

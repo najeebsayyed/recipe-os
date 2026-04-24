@@ -1,26 +1,34 @@
-import React from 'react';
 import {
   TouchableOpacity,
   Text,
   TouchableOpacityProps,
   Image,
+  ImageSourcePropType,
 } from 'react-native';
 
-interface Props extends TouchableOpacityProps {
+type SocialButtonProps = TouchableOpacityProps & {
   title: string;
-  icon?: any;
-}
+  icon?: ImageSourcePropType;
+};
 
-const SocialButton: React.FC<Props> = ({ title, icon, ...props }) => {
+const SocialButton = ({
+  title,
+  icon,
+  disabled,
+  ...props
+}: SocialButtonProps) => {
   return (
     <TouchableOpacity
-      className="bg-white py-4 rounded-2xl items-center mt-6 mb-6 border border-primary flex-row justify-center"
+      className={`bg-white py-4 rounded-2xl items-center mt-6 mb-6 border border-primary flex-row justify-center ${
+        disabled ? 'opacity-50' : ''
+      }`}
       activeOpacity={0.85}
+      disabled={disabled}
       {...props}
     >
-      {icon && (
+      {icon ? (
         <Image source={icon} className="w-6 h-6 mr-4" resizeMode="contain" />
-      )}
+      ) : null}
 
       <Text className="text-primary font-nunitoBold text-md">{title}</Text>
     </TouchableOpacity>

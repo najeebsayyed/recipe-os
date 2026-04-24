@@ -16,7 +16,7 @@ const HomeScreen = () => {
   return (
     <View className="flex-1 bg-white px-7">
       {/* App Logo and Profile icon */}
-      <View className="flex-row justify-between mt-10 items-center ">
+      <View className="flex-row justify-between mt-12 items-center  ">
         <Image
           source={require('../../assets/images/appLogo.png')}
           className="h-20 w-24  "
@@ -41,7 +41,7 @@ const HomeScreen = () => {
 
       {/* Welcome message  */}
       <HeroSection
-        classname="mt-12 mb-12"
+        classname="mt-10 mb-8"
         title={`Welcome, ${
           user?.user_metadata?.full_name?.split(' ')[0] || 'Foodie'
         } 👋`}

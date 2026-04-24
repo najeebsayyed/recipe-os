@@ -19,7 +19,7 @@ const SocialButton = ({
 }: SocialButtonProps) => {
   return (
     <TouchableOpacity
-      className={`bg-white py-4 rounded-2xl items-center mt-6 mb-6 border border-primary flex-row justify-center ${
+      className={`bg-white py-3 rounded-2xl items-center mt-6 mb-6 border border-primary flex-row justify-center ${
         disabled ? 'opacity-50' : ''
       }`}
       activeOpacity={0.85}
@@ -30,7 +30,7 @@ const SocialButton = ({
         <Image source={icon} className="w-6 h-6 mr-4" resizeMode="contain" />
       ) : null}
 
-      <Text className="text-primary font-nunitoBold text-md">{title}</Text>
+      <Text className="text-primary font-nunitoBold text-lg">{title}</Text>
     </TouchableOpacity>
   );
 };

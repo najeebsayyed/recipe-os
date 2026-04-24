@@ -32,11 +32,11 @@ const AppHeader = ({
 
   return (
     <View
-      className={`pt-14 pb-4 flex-row items-center justify-between px-4 ${classname}`}
+      className={`pt-14 pb-20 flex-row items-center justify-between px-4 ${classname}`}
     >
       {/* Left - Back Button */}
       {showBack ? (
-        <TouchableOpacity onPress={handleBackPress}>
+        <TouchableOpacity onPress={handleBackPress} className="ml-4">
           <ArrowBackIcon pointerEvents="box-none" height={24} width={24} />
         </TouchableOpacity>
       ) : (

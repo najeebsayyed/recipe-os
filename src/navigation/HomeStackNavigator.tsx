@@ -1,6 +1,8 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from '../screens/home/HomeScreen';
 import RecipeDetailScreen from '../screens/recipe/RecipeDetailScreen';
+import ProfileScreen from '../screens/profile/ProfileScreen';
+import IngredientScreen from '../screens/home/IngredientScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -9,6 +11,8 @@ export default function HomeStackNavigator() {
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Recipe" component={RecipeDetailScreen} />
+      <Stack.Screen name="Profile" component={ProfileScreen} />
+      <Stack.Screen name="Ingredients" component={IngredientScreen} />
     </Stack.Navigator>
   );
 }

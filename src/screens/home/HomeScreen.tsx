@@ -1,92 +1,64 @@
-import { View, Image } from 'react-native';
-import React, { useState } from 'react';
+import { View, Image, TouchableOpacity, Text } from 'react-native';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
 import HeroSection from '../../components/common/HeroSection';
 import PrimaryButton from '../../components/common/PrimaryButton';
 import Divider from '../../components/common/Divider';
-import IngredientInput from '../../components/recipe/IngredientInput';
-
+import ProfileIcom from '../../assets/icons/profile.svg';
 import { useNavigation } from '@react-navigation/native';
-import { generateRecipe } from '../../services/gemini/geminiApi';
 
 const HomeScreen = () => {
-  const [input, setInput] = useState('');
-  const [ingredients, setIngredients] = useState<string[]>([]);
-  const [loading, setLoading] = useState(false);
-
   const user = useSelector((state: RootState) => state.auth.user);
+  const firstLetter = user?.user_metadata?.full_name?.[0];
   const navigation = useNavigation<any>();
-
-  // ➕ Add ingredient
-  const addIngredient = () => {
-    const value = input.trim().toLowerCase();
-    if (!value) return;
-
-    if (ingredients.includes(value)) {
-      setInput('');
-      return;
-    }
-
-    setIngredients(prev => [...prev, value]);
-    setInput('');
-  };
-
-  // ❌ Remove ingredient
-  const removeIngredient = (item: string) => {
-    setIngredients(prev => prev.filter(i => i !== item));
-  };
-
-  // 🚀 Generate + Navigate
-  const handleGenerate = async () => {
-    if (ingredients.length === 0) return;
-    console.log('BUTTON CLICKED'); // 👈 add this
-    try {
-      setLoading(true);
-
-      const res = await generateRecipe(ingredients);
-
-      // 👉 Navigate instead of setState
-      navigation.navigate('Recipe', { recipe: res });
-    } catch (e) {
-      console.log(e);
-    } finally {
-      setLoading(false);
-    }
-  };
 
   return (
     <View className="flex-1 bg-white px-7">
-      <View pointerEvents="none">
+      {/* App Logo and Profile icon */}
+      <View className="flex-row justify-between mt-10 items-center ">
         <Image
           source={require('../../assets/images/appLogo.png')}
-          className="w-40 h-40 mt-6 absolute"
+          className="h-20 w-24  "
         />
+        <TouchableOpacity
+          className="bg-border rounded-full h-14 w-14 items-center justify-center"
+          onPress={() => {
+            navigation.navigate('Profile');
+          }}
+        >
+          {firstLetter ? (
+            <Text
+              style={{ color: '#1f4d42', fontWeight: 'bold', fontSize: 26 }}
+            >
+              {firstLetter}
+            </Text>
+          ) : (
+            <ProfileIcom height={40} width={40} />
+          )}
+        </TouchableOpacity>
       </View>
 
+      {/* Welcome message  */}
       <HeroSection
-        classname="mt-36 mb-16"
-        title={`Hello, ${
+        classname="mt-12 mb-12"
+        title={`Welcome, ${
           user?.user_metadata?.full_name?.split(' ')[0] || 'Foodie'
         } 👋`}
         subtitle="What's in your kitchen?"
         subtitleStyle="text-lg font-nunitoSemiBold"
       />
 
-      <IngredientInput
-        input={input}
-        setInput={setInput}
-        ingredients={ingredients}
-        addIngredient={addIngredient}
-        removeIngredient={removeIngredient}
-      />
-
+      {/* Ingredients button */}
       <PrimaryButton
-        title={loading ? 'Generating...' : 'Generate Recipe'}
-        onPress={handleGenerate}
+        title={'Add Ingredients !'}
+        onPress={() => {
+          navigation.navigate('Ingredients');
+        }}
       />
-
       <Divider />
+
+      {/* Saved recipes */}
     </View>
   );
 };

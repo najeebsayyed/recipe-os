@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../store';
 
 import AuthNavigator from './AuthNavigator';
-import TabNavigator from './TabNavigator';
+import HomeStackNavigator from './HomeStackNavigator';
 import DismissKeyboardView from '../components/common/DismissKeyboardView';
 
 export default function RootNavigator() {
@@ -13,7 +13,7 @@ export default function RootNavigator() {
   return (
     <DismissKeyboardView>
       <NavigationContainer>
-        {user || isGuest ? <TabNavigator /> : <AuthNavigator />}
+        {user || isGuest ? <HomeStackNavigator /> : <AuthNavigator />}
       </NavigationContainer>
     </DismissKeyboardView>
   );

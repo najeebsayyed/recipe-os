@@ -28,9 +28,7 @@ const HomeScreen = () => {
           }}
         >
           {firstLetter ? (
-            <Text
-              style={{ color: '#1f4d42', fontWeight: 'bold', fontSize: 26 }}
-            >
+            <Text className="text-primary font-bold text-3xl">
               {firstLetter}
             </Text>
           ) : (
@@ -41,7 +39,7 @@ const HomeScreen = () => {
 
       {/* Welcome message  */}
       <HeroSection
-        classname="mt-10 mb-8"
+        classname="mt-14 mb-10"
         title={`Welcome, ${
           user?.user_metadata?.full_name?.split(' ')[0] || 'Foodie'
         } 👋`}
@@ -51,7 +49,7 @@ const HomeScreen = () => {
 
       {/* Ingredients button */}
       <PrimaryButton
-        title={'Add Ingredients !'}
+        title={'Add Ingredients!'}
         onPress={() => {
           navigation.navigate('Ingredients');
         }}

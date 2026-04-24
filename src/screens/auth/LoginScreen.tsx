@@ -33,7 +33,7 @@ const LoginScreen = ({ navigation }: any) => {
   //   await signInWithGoogle();
   // };
   return (
-    <View className="flex-1 bg-white px-7">
+    <View className="flex-1 bg-white px-7 justify-center">
       <HeroSection
         title={'Welcome back!'}
         subtitle={'Log in to your account'}

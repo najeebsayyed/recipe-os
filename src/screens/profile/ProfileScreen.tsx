@@ -21,7 +21,6 @@ const ProfileScreen = () => {
         />
       ) : (
         <View>
-          {' '}
           <HeroSection
             title="Guest User"
             subtitle="Log in to save your recipes and access all features"

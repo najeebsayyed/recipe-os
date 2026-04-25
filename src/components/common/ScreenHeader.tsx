@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import ArrowBackIcon from '../../assets/icons/arrow_back.svg';
 import type { NavigationProp } from '@react-navigation/native';
 
-type AppHeaderProps = {
+type ScreenHeaderProps = {
   title: string;
   classname?: string;
   titleStyle?: string;
@@ -13,14 +13,14 @@ type AppHeaderProps = {
   onRightPress?: () => void;
 };
 
-const AppHeader = ({
+const ScreenHeader = ({
   title,
   classname = '',
   titleStyle = '',
   showBack = true,
   rightIcon,
   onRightPress,
-}: AppHeaderProps) => {
+}: ScreenHeaderProps) => {
   const navigation =
     useNavigation<NavigationProp<Record<string, object | undefined>>>();
 
@@ -60,4 +60,4 @@ const AppHeader = ({
   );
 };
 
-export default AppHeader;
+export default ScreenHeader;

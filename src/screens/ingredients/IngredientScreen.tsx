@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View } from 'react-native';
 import IngredientItem from '../../components/recipe/IngredientItem';
 import IngredientInputBox from '../../components/recipe/IngredientInputBox';
-import ToggleRow from '../../components/recipe/ToggleRow';
+import ToggleRow from '../../components/common/ToggleRow';
 import PrimaryButton from '../../components/common/PrimaryButton';
 import ScreenHeader from '../../components/common/ScreenHeader';
 

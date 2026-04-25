@@ -5,10 +5,14 @@ import IngredientInputBox from '../../components/recipe/IngredientInputBox';
 import ToggleRow from '../../components/common/ToggleRow';
 import PrimaryButton from '../../components/common/PrimaryButton';
 import ScreenHeader from '../../components/common/ScreenHeader';
+import { generateRecipe } from '../../services/gemini/geminiApi';
+import { useNavigation } from '@react-navigation/native';
 
 const IngredientInput = () => {
+  const navigation = useNavigation<any>();
   const [allowOther, setAllowOther] = useState(true);
   const [ingredients, setIngredients] = useState<string[]>([]);
+  const [loading, setLoading] = useState(false);
 
   const handleAddIngredient = (value: string) => {
     if (ingredients.some(i => i.toLowerCase() === value.toLowerCase())) {
@@ -21,14 +25,30 @@ const IngredientInput = () => {
     setIngredients(prev => prev.filter((_, i) => i !== index));
   };
 
+  const handleGenerate = async () => {
+    if (ingredients.length === 0) return;
+
+    try {
+      setLoading(true);
+
+      const result = await generateRecipe(ingredients);
+
+      navigation.navigate('Recipe', { recipe: result });
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <View className="flex-1 bg-white">
-      {/* HEADER */}
       <ScreenHeader title="Add Ingredients" />
-      {/* CONTENT */}
+
       <View className="flex-1 px-7">
         <IngredientInputBox onAdd={handleAddIngredient} />
         <ToggleRow value={allowOther} onChange={setAllowOther} />
+
         <View className="mt-4 gap-3">
           {ingredients.map((item, index) => (
             <IngredientItem
@@ -40,9 +60,11 @@ const IngredientInput = () => {
         </View>
       </View>
 
-      {/* FIXED BUTTON */}
       <View className="px-7 pb-6 pt-2 bg-white">
-        <PrimaryButton title="Create my recipe" />
+        <PrimaryButton
+          title={loading ? 'Generating...' : 'Create my recipe'}
+          onPress={handleGenerate}
+        />
       </View>
     </View>
   );

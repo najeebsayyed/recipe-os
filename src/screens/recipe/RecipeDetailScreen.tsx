@@ -1,39 +1,30 @@
-import { Text, ScrollView } from 'react-native';
 import React from 'react';
-import { RouteProp, useRoute } from '@react-navigation/native';
-import { Recipe } from '../../types/recipe';
+import { Text, ScrollView } from 'react-native';
 
-type RouteParams = {
-  recipe: Recipe;
-};
-
-const RecipeDetailScreen = () => {
-  const route = useRoute<RouteProp<{ params: RouteParams }, 'params'>>();
+const RecipeDetailScreen = ({ route }: any) => {
   const { recipe } = route.params;
 
   return (
     <ScrollView className="flex-1 bg-white p-5">
-      <Text className="text-2xl font-bold mb-3">{recipe.name}</Text>
+      <Text className="text-2xl font-bold mb-4">{recipe.name}</Text>
 
-      <Text className="font-semibold mt-2">Ingredients:</Text>
-      {recipe.ingredients.map((item, i) => (
+      <Text className="font-semibold mb-2">Ingredients:</Text>
+      {recipe.ingredients.map((item: string, i: number) => (
         <Text key={i}>• {item}</Text>
       ))}
 
-      <Text className="font-semibold mt-4">Steps:</Text>
-      {recipe.steps.map((step, i) => (
+      <Text className="font-semibold mt-4 mb-2">Steps:</Text>
+      {recipe.steps.map((step: string, i: number) => (
         <Text key={i}>
           {i + 1}. {step}
         </Text>
       ))}
 
-      {recipe.missing.length > 0 && (
+      {recipe.missing?.length > 0 && (
         <>
-          <Text className="font-semibold text-red-500 mt-4">
-            Missing Ingredients:
-          </Text>
-          {recipe.missing.map((m, i) => (
-            <Text key={i}>• {m}</Text>
+          <Text className="font-semibold mt-4 mb-2">Missing:</Text>
+          {recipe.missing.map((item: string, i: number) => (
+            <Text key={i}>• {item}</Text>
           ))}
         </>
       )}

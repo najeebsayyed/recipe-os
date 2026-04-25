@@ -31,12 +31,10 @@ const ScreenHeader = ({
   };
 
   return (
-    <View
-      className={`pt-14 pb-20 flex-row items-center justify-between px-4 ${classname}`}
-    >
+    <View className={`pt-14 pb-20 flex-row items-center gap-6 ${classname}`}>
       {/* Left - Back Button */}
       {showBack ? (
-        <TouchableOpacity onPress={handleBackPress} className="ml-4">
+        <TouchableOpacity onPress={handleBackPress}>
           <ArrowBackIcon pointerEvents="box-none" height={24} width={24} />
         </TouchableOpacity>
       ) : (

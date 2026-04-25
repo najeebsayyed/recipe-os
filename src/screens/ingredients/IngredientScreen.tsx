@@ -42,10 +42,10 @@ const IngredientInput = () => {
   };
 
   return (
-    <View className="flex-1 bg-white">
+    <View className="flex-1 bg-white px-7">
       <ScreenHeader title="Add Ingredients" />
 
-      <View className="flex-1 px-7">
+      <View className="flex-1 ">
         <IngredientInputBox onAdd={handleAddIngredient} />
         <ToggleRow value={allowOther} onChange={setAllowOther} />
 
@@ -60,7 +60,7 @@ const IngredientInput = () => {
         </View>
       </View>
 
-      <View className="px-7 pb-6 pt-2 bg-white">
+      <View className=" pb-6 pt-2 bg-white">
         <PrimaryButton
           title={loading ? 'Generating...' : 'Create my recipe'}
           onPress={handleGenerate}

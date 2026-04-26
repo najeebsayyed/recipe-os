@@ -11,7 +11,7 @@ import SignupScreen from '../screens/auth/SignupScreen';
 
 const Stack = createNativeStackNavigator();
 
-export default function HomeStackNavigator() {
+export default function AppStackNavigator() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Home" component={HomeScreen} />

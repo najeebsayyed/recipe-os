@@ -49,7 +49,7 @@ const ProfileScreen = () => {
           <PrimaryButton
             title="Log In"
             onPress={() => {
-              navigation.navigate();
+              navigation.navigate('Login');
             }}
           />
         </View>

@@ -1,7 +1,7 @@
 const colors = {
   // Brand Greens
   primary: '#1f4d42', // Dark green (buttons, CTA)
-  secondary: '#6FB8A8', // Light green (chips, icons)
+  secondary: '#357364', // Light green (chips, icons)
 
   // Backgrounds
   background: '#F3F8F6', // Very light green
@@ -13,6 +13,7 @@ const colors = {
   placeholder: '#9FB4AE',
 
   // UI
+  lightBackground: '#F8FAF8',
   border: '#D6E4DF',
   disabled: '#C9DAD5',
   error: '#D9534F',
@@ -20,8 +21,9 @@ const colors = {
 
   // Dark mode (for later)
   darkBackground: '#121212',
-  darkCard: '#1E1E1E',
-  darkText: '#FFFFFF',
+  darkPrimary: '#EAEAEA',
+  darkSecondary: '#A1A1AA',
+  darkBorder: '#2A2A2A',
 };
 
 export default colors;

@@ -9,7 +9,7 @@ interface Props {
 
 const IngredientItem = ({ name, onDelete }: Props) => {
   return (
-    <View className="flex-row justify-between items-center bg-[#ebf5f1] px-5 py-4 rounded-full">
+    <View className="flex-row justify-between items-center bg-border px-5 py-4 rounded-full">
       <Text className="text-lg font-nunitoRegular text-primary">{name}</Text>
 
       <TouchableOpacity onPress={onDelete}>

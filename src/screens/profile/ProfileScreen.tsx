@@ -12,7 +12,7 @@ const ProfileScreen = () => {
   const navigation = useNavigation<any>();
   const user = useSelector((state: RootState) => state.auth.user);
   return (
-    <View className="flex-1 bg-white px-7">
+    <View className="flex-1 bg-lightBackground dark:bg-darkBackground px-7">
       {/* Screen Header with back icon */}
       <ScreenHeader title="Profile" />
       {/* Profile Information */}

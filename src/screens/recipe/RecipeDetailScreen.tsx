@@ -8,9 +8,9 @@ const RecipeDetailScreen = ({ route }: any) => {
   const { recipe } = route.params;
 
   return (
-    <ScrollView className="flex-1 bg-white px-7">
+    <ScrollView className="flex-1 bg-lightBackground dark:bg-darkBackground px-7">
       <ScreenHeader title="Recipe Details" />
-      <Text className="text-xl font-nunitoSemiBold text-primary ">
+      <Text className="text-xl font-nunitoSemiBold text-primary dark:text-darkPrimary ">
         {recipe.name}
       </Text>
       <Divider />
@@ -19,7 +19,7 @@ const RecipeDetailScreen = ({ route }: any) => {
       <RecipeSection
         title="Missing:"
         data={recipe.missing}
-        titleClassName="text-error"
+        titleClassName="text-red-500"
       />
     </ScrollView>
   );

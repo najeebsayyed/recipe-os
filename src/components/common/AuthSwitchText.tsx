@@ -13,12 +13,12 @@ const AuthSwitchText = ({
 }: AuthSwitchTextProps) => {
   return (
     <View className="flex-row justify-center mt-8">
-      <Text className="text-textSecondary text-sm font-nunitoRegular">
+      <Text className="text-textSecondary dark:text-darkSecondary text-sm font-nunitoRegular">
         {question}{' '}
       </Text>
 
       <TouchableOpacity onPress={onPress} activeOpacity={0.7}>
-        <Text className="text-primary text-sm font-nunitoSemiBold">
+        <Text className="text-primary dark:text-darkPrimary text-sm font-nunitoSemiBold">
           {actionText}
         </Text>
       </TouchableOpacity>

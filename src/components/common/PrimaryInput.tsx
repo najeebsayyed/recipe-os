@@ -39,7 +39,9 @@ const PrimaryInput = ({
       {/* Label Row */}
       {label ? (
         <View className="flex-row justify-between mb-2">
-          <Text className="text-primary text-sm font-semibold">{label}</Text>
+          <Text className="text-primary dark:text-darkSecondary text-sm font-semibold">
+            {label}
+          </Text>
 
           {rightText ? (
             <TouchableOpacity onPress={onRightPress} activeOpacity={0.7}>

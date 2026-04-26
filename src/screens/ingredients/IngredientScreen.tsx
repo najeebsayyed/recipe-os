@@ -42,7 +42,7 @@ const IngredientInput = () => {
   };
 
   return (
-    <View className="flex-1 bg-white px-7">
+    <View className="flex-1 bg-lightBackground dark:bg-darkBackground px-7">
       <ScreenHeader title="Add Ingredients" />
 
       <View className="flex-1 ">
@@ -60,7 +60,7 @@ const IngredientInput = () => {
         </View>
       </View>
 
-      <View className=" pb-6 pt-2 bg-white">
+      <View className=" pb-6 pt-2">
         <PrimaryButton
           title={loading ? 'Generating...' : 'Create my recipe'}
           onPress={handleGenerate}

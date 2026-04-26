@@ -14,7 +14,7 @@ const HomeScreen = () => {
   const navigation = useNavigation<any>();
 
   return (
-    <View className="flex-1 bg-white px-7">
+    <View className="flex-1 bg-lightBackground dark:bg-darkBackground px-7">
       {/* App Logo and Profile icon */}
       <View className="flex-row justify-between mt-12 items-center  ">
         <Image

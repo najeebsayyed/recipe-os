@@ -22,7 +22,10 @@ const RecipeSection = ({
       <TextChip label={title} textClassName={titleClassName} />
 
       {data.map((item, i) => (
-        <Text key={i} className="font-nunitoSemiBold text-lg text-black mb-2">
+        <Text
+          key={i}
+          className="font-nunitoSemiBold text-lg text-black dark:text-darkPrimary mb-2"
+        >
           {numbered ? `${i + 1}. ` : '• '}
           {item}
         </Text>

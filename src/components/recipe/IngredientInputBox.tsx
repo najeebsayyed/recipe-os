@@ -17,7 +17,7 @@ const IngredientInputBox = ({ onAdd }: Props) => {
   };
 
   return (
-    <View className="flex-row items-center border border-primary rounded-2xl px-4 py-2 bg-white ">
+    <View className="flex-row items-center border border-primary rounded-2xl px-4 py-2 bg-lightBackground ">
       <TextInput
         placeholder="Enter ingredient..."
         value={input}

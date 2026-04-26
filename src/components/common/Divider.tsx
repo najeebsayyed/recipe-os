@@ -11,10 +11,12 @@ const Divider = ({ label, className = '' }: DividerProps) => {
       <View className="flex-1 h-[2px] bg-border opacity-60" />
 
       {label ? (
-        <Text className="mx-3 text-textSecondary text-sm">{label}</Text>
+        <Text className="mx-3 text-textSecondary dark:text-darkSecondary text-sm">
+          {label}
+        </Text>
       ) : null}
 
-      <View className="flex-1 h-[2px] bg-border opacity-60" />
+      <View className="flex-1 h-[2px] bg-border  opacity-60" />
     </View>
   );
 };

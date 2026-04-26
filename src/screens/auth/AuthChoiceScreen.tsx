@@ -9,7 +9,7 @@ import { setGuest } from '../../store/slices/authSlice';
 const AuthChoiceScreen = ({ navigation }: any) => {
   const dispatch = useDispatch();
   return (
-    <View className="flex-1 bg-white px-7 justify-center py-10">
+    <View className="flex-1 bg-lightBackground dark:bg-darkBackground px-7 justify-center py-10">
       {/* Top Section */}
 
       <Image

@@ -7,6 +7,7 @@ import PrimaryButton from '../../components/common/PrimaryButton';
 import ScreenHeader from '../../components/common/ScreenHeader';
 import { generateRecipe } from '../../services/gemini/geminiApi';
 import { useNavigation } from '@react-navigation/native';
+import DismissKeyboardView from '../../components/common/DismissKeyboardView';
 
 const IngredientInput = () => {
   const navigation = useNavigation<any>();
@@ -42,31 +43,33 @@ const IngredientInput = () => {
   };
 
   return (
-    <View className="flex-1 bg-lightBackground dark:bg-darkBackground px-7">
-      <ScreenHeader title="Add Ingredients" />
+    <DismissKeyboardView>
+      <View className="flex-1 bg-lightBackground dark:bg-darkBackground px-7">
+        <ScreenHeader title="Add Ingredients" />
 
-      <View className="flex-1 ">
-        <IngredientInputBox onAdd={handleAddIngredient} />
-        <ToggleRow value={allowOther} onChange={setAllowOther} />
+        <View className="flex-1 ">
+          <IngredientInputBox onAdd={handleAddIngredient} />
+          <ToggleRow value={allowOther} onChange={setAllowOther} />
 
-        <View className="mt-4 gap-3">
-          {ingredients.map((item, index) => (
-            <IngredientItem
-              key={`${item}-${index}`}
-              name={item}
-              onDelete={() => handleDelete(index)}
-            />
-          ))}
+          <View className="mt-4 gap-3">
+            {ingredients.map((item, index) => (
+              <IngredientItem
+                key={`${item}-${index}`}
+                name={item}
+                onDelete={() => handleDelete(index)}
+              />
+            ))}
+          </View>
+        </View>
+
+        <View className=" pb-6 pt-2">
+          <PrimaryButton
+            title={loading ? 'Generating...' : 'Create my recipe'}
+            onPress={handleGenerate}
+          />
         </View>
       </View>
-
-      <View className=" pb-6 pt-2">
-        <PrimaryButton
-          title={loading ? 'Generating...' : 'Create my recipe'}
-          onPress={handleGenerate}
-        />
-      </View>
-    </View>
+    </DismissKeyboardView>
   );
 };
 

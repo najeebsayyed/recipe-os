@@ -94,7 +94,7 @@ const RecipeDetailScreen = ({ route }: any) => {
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
-      className="flex-1 bg-lightBackground dark:bg-darkBackground px-7 mb-5"
+      className="flex-1 bg-lightBackground dark:bg-darkBackground px-7 "
     >
       <ScreenHeader title="Recipe Details" />
 
@@ -119,16 +119,18 @@ const RecipeDetailScreen = ({ route }: any) => {
         </TouchableOpacity>
       </View>
       <Divider />
+      <View className="mb-10">
+        <RecipeSection title="Ingredients" data={recipe.ingredients} />
 
-      <RecipeSection title="Ingredients" data={recipe.ingredients} />
+        <RecipeSection title="Steps" data={recipe.steps} numbered />
 
-      <RecipeSection title="Steps" data={recipe.steps} numbered />
-
-      <RecipeSection
-        title="Missing Ingredients"
-        data={recipe.missing}
-        titleClassName="text-red-500"
-      />
+        <RecipeSection
+          title="Missing Ingredients"
+          data={recipe.missing}
+          titleClassName="text-red-500"
+        />
+        <Divider label="Enjoy your recipe!" />
+      </View>
     </ScrollView>
   );
 };

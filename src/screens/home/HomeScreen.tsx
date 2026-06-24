@@ -163,7 +163,7 @@ const HomeScreen = () => {
             ))}
           </ScrollView>
         ) : (
-          <View className="bg-white dark:bg-darkCard rounded-[32px] p-5 items-center border border-border">
+          <View className="bg-border rounded-[32px] p-5 items-center border border-border">
             {/* SVG */}
             <View className="bg-primary/10 rounded-full p-6 mb-5">
               <ChefSvg width={90} height={90} />

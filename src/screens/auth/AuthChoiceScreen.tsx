@@ -14,7 +14,7 @@ const AuthChoiceScreen = ({ navigation }: any) => {
 
       <Image
         source={require('../../assets/images/appLogo.png')}
-        className="h-20 w-24 self-center "
+        className="h-36 w-40 self-center "
       />
 
       {/* Buttons */}

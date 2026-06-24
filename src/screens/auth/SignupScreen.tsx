@@ -3,13 +3,13 @@ import React, { useState } from 'react';
 import HeroSection from '../../components/common/HeroSection';
 import PrimaryInput from '../../components/common/PrimaryInput';
 import PrimaryButton from '../../components/common/PrimaryButton';
-// import SocialButton from '../../components/common/SocialButton';
 import Divider from '../../components/common/Divider';
 import AuthSwitchText from '../../components/common/AuthSwitchText';
 import EmailIcon from '../../assets/icons/email.svg';
 import LockIcon from '../../assets/icons/lock.svg';
 import ProfileIcon from '../../assets/icons/profile.svg';
 import { signUp } from '../../services/supabase/auth.service';
+import DismissKeyboardView from '../../components/common/DismissKeyboardView';
 const SignupScreen = ({ navigation }: any) => {
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
@@ -34,46 +34,44 @@ const SignupScreen = ({ navigation }: any) => {
   };
 
   return (
-    <View className="flex-1 bg-lightBackground dark:bg-darkBackground px-7 justify-center">
-      <HeroSection title={'Get Started!'} subtitle={'Create your account'} />
-      <PrimaryInput
-        label="Full Name"
-        placeholder="Full Name..."
-        value={fullName}
-        onChangeText={setFullName}
-        icon={<ProfileIcon />}
-      />
-      <PrimaryInput
-        label="Email Address"
-        placeholder="Email Address"
-        type="email"
-        value={email}
-        onChangeText={setEmail}
-        icon={<EmailIcon />}
-      />
-      <PrimaryInput
-        label="Password"
-        placeholder="Password"
-        type="password"
-        value={password}
-        onChangeText={setPassword}
-        icon={<LockIcon />}
-      />
-      <PrimaryButton title="Sign Up" onPress={handleSignup} />
-      {/* <Divider label="OR" />
-      <SocialButton
-        title="Sign up with Google"
-        icon={require('../../assets/images/google.png')}
-      /> */}
-      <Divider />
-      <AuthSwitchText
-        question="Already have an account? "
-        actionText="Log In"
-        onPress={() => {
-          navigation.navigate('Login');
-        }}
-      />
-    </View>
+    <DismissKeyboardView>
+      <View className="flex-1 bg-lightBackground dark:bg-darkBackground px-7 justify-center">
+        <HeroSection title={'Get Started!'} subtitle={'Create your account'} />
+        <PrimaryInput
+          label="Full Name"
+          placeholder="Full Name..."
+          value={fullName}
+          onChangeText={setFullName}
+          icon={<ProfileIcon />}
+        />
+        <PrimaryInput
+          label="Email Address"
+          placeholder="Email Address"
+          type="email"
+          value={email}
+          onChangeText={setEmail}
+          icon={<EmailIcon />}
+        />
+        <PrimaryInput
+          label="Password"
+          placeholder="Password"
+          type="password"
+          value={password}
+          onChangeText={setPassword}
+          icon={<LockIcon />}
+        />
+        <PrimaryButton title="Sign Up" onPress={handleSignup} />
+
+        <Divider />
+        <AuthSwitchText
+          question="Already have an account? "
+          actionText="Log In"
+          onPress={() => {
+            navigation.navigate('Login');
+          }}
+        />
+      </View>
+    </DismissKeyboardView>
   );
 };
 

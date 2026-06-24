@@ -3,12 +3,12 @@ import React, { useState } from 'react';
 import HeroSection from '../../components/common/HeroSection';
 import PrimaryInput from '../../components/common/PrimaryInput';
 import PrimaryButton from '../../components/common/PrimaryButton';
-// import SocialButton from '../../components/common/SocialButton';
 import Divider from '../../components/common/Divider';
 import AuthSwitchText from '../../components/common/AuthSwitchText';
 import EmailIcon from '../../assets/icons/email.svg';
 import LockIcon from '../../assets/icons/lock.svg';
 import { logIn } from '../../services/supabase/auth.service';
+import DismissKeyboardView from '../../components/common/DismissKeyboardView';
 
 const LoginScreen = ({ navigation }: any) => {
   const [email, setEmail] = useState('');
@@ -29,40 +29,42 @@ const LoginScreen = ({ navigation }: any) => {
   };
 
   return (
-    <View className="flex-1 bg-lightBackground dark:bg-darkBackground px-7 justify-center">
-      <HeroSection
-        title={'Welcome back!'}
-        subtitle={'Log in to your account'}
-      />
+    <DismissKeyboardView>
+      <View className="flex-1 bg-lightBackground dark:bg-darkBackground px-7 justify-center">
+        <HeroSection
+          title={'Welcome back!'}
+          subtitle={'Log in to your account'}
+        />
 
-      <PrimaryInput
-        label="Email Address"
-        placeholder="Email Address"
-        value={email}
-        onChangeText={setEmail}
-        type="email"
-        icon={<EmailIcon />}
-      />
-      <PrimaryInput
-        label="Password"
-        placeholder="Password"
-        type="password"
-        value={password}
-        onChangeText={setPassword}
-        rightText="Forgot Password"
-        icon={<LockIcon />}
-      />
-      <PrimaryButton title="Log In" onPress={handleLogin} />
+        <PrimaryInput
+          label="Email Address"
+          placeholder="Email Address"
+          value={email}
+          onChangeText={setEmail}
+          type="email"
+          icon={<EmailIcon />}
+        />
+        <PrimaryInput
+          label="Password"
+          placeholder="Password"
+          type="password"
+          value={password}
+          onChangeText={setPassword}
+          rightText="Forgot Password"
+          icon={<LockIcon />}
+        />
+        <PrimaryButton title="Log In" onPress={handleLogin} />
 
-      <Divider />
-      <AuthSwitchText
-        question="Don't have an account? "
-        actionText="Sign Up"
-        onPress={() => {
-          navigation.navigate('Signup');
-        }}
-      />
-    </View>
+        <Divider />
+        <AuthSwitchText
+          question="Don't have an account? "
+          actionText="Sign Up"
+          onPress={() => {
+            navigation.navigate('Signup');
+          }}
+        />
+      </View>
+    </DismissKeyboardView>
   );
 };
 

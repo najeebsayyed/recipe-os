@@ -19,6 +19,10 @@ const colors = {
   error: '#D9534F',
   success: '#4CAF50',
 
+  //Cards
+  lightCard: '#D6E4DF',
+  darkCard: '#1E2B27',
+
   // Dark mode (for later)
   darkBackground: '#121212',
   darkPrimary: '#EAEAEA',

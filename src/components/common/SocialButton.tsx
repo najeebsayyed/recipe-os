@@ -1,36 +1,61 @@
+import React from 'react';
 import {
   TouchableOpacity,
   Text,
   TouchableOpacityProps,
-  Image,
-  ImageSourcePropType,
+  View,
 } from 'react-native';
 
 type SocialButtonProps = TouchableOpacityProps & {
   title: string;
-  icon?: ImageSourcePropType;
+  LeftIcon?: React.ReactNode;
+  RightIcon?: React.ReactNode;
+  className?: string;
 };
 
 const SocialButton = ({
   title,
-  icon,
+  LeftIcon,
+  RightIcon,
   disabled,
+  className = '',
   ...props
 }: SocialButtonProps) => {
   return (
     <TouchableOpacity
-      className={`bg-white py-3 rounded-2xl items-center mt-6 mb-6 border border-primary flex-row justify-center ${
-        disabled ? 'opacity-50' : ''
-      }`}
       activeOpacity={0.85}
       disabled={disabled}
+      className={`
+        h-16
+        bg-white
+        rounded-2xl
+        border
+        border-primary
+        px-5
+        flex-row
+        items-center
+        justify-between
+        shadow-sm
+        ${disabled ? 'opacity-50' : ''}
+        ${className}
+      `}
       {...props}
     >
-      {icon ? (
-        <Image source={icon} className="w-6 h-6 mr-4" resizeMode="contain" />
-      ) : null}
+      <View className="flex-row items-center">
+        {LeftIcon && (
+          <View className="h-11 w-11 rounded-xl bg-lightCard items-center justify-center">
+            {LeftIcon}
+          </View>
+        )}
 
-      <Text className="text-primary font-nunitoBold text-lg">{title}</Text>
+        <Text className="ml-4  text-primary font-nunitoBold text-xl">
+          {title}
+        </Text>
+      </View>
+
+      {RightIcon && (
+        <View className="items-center justify-center">{RightIcon}</View>
+      )}
     </TouchableOpacity>
   );
 };

@@ -8,6 +8,7 @@ import ScreenHeader from '../../components/common/ScreenHeader';
 import { generateRecipe } from '../../services/gemini/geminiApi';
 import { useNavigation } from '@react-navigation/native';
 import DismissKeyboardView from '../../components/common/DismissKeyboardView';
+import RecipeGenerating from '../recipe/RecipeGenerating';
 
 const IngredientInput = () => {
   const navigation = useNavigation<any>();
@@ -62,12 +63,17 @@ const IngredientInput = () => {
           </View>
         </View>
 
-        <View className=" pb-6 pt-2">
-          <PrimaryButton
-            title={loading ? 'Generating...' : 'Create my recipe'}
-            onPress={handleGenerate}
-          />
-        </View>
+        <>
+          <RecipeGenerating visible={loading} />
+
+          <View className="pb-6 pt-2">
+            <PrimaryButton
+              title="Create my recipe"
+              onPress={handleGenerate}
+              disabled={loading}
+            />
+          </View>
+        </>
       </View>
     </DismissKeyboardView>
   );
